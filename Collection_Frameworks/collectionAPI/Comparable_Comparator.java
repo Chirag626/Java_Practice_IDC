@@ -78,7 +78,7 @@ public class Comparable_Comparator {
         list.add(new Student(2, "Neha", 21, 90.5));
 
         // -------------------------------------------------
-        // 1️⃣ Default Sorting (Comparable → by ID)
+        //  Default Sorting (Comparable → by ID)
         // -------------------------------------------------
         Collections.sort(list);
         System.out.println("Sorted by ID (Comparable):");
@@ -89,7 +89,7 @@ public class Comparable_Comparator {
         System.out.println();
 
         // -------------------------------------------------
-        // 2️⃣ Sorting using Comparator → by Age
+        // Sorting using Comparator → by Age
         // -------------------------------------------------
         Collections.sort(list, new AgeComparator());
         System.out.println("Sorted by Age (Comparator):");
@@ -100,7 +100,7 @@ public class Comparable_Comparator {
         System.out.println();
 
         // -------------------------------------------------
-        // 3️⃣ Sorting using Comparator → by Marks Desc
+        // Sorting using Comparator → by Marks Desc
         // -------------------------------------------------
         Collections.sort(list, new MarksComparator());
         System.out.println("Sorted by Marks Desc (Comparator):");
