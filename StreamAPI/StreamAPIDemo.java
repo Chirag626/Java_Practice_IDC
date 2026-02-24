@@ -17,7 +17,7 @@ public class StreamAPIDemo {
         // Filter numbers greater than 10
         numbers.stream()
                 .filter(n -> n > 10)   // Intermediate
-                .forEach(System.out::println);  // Terminal
+                .forEach(e -> System.out.println(e);  // Type 1 to use forEach
 
 
         System.out.println("\n----- Map Example -----");
@@ -25,7 +25,7 @@ public class StreamAPIDemo {
         // Multiply each number by 2
         numbers.stream()
                 .map(n -> n * 2)
-                .forEach(System.out::println);
+                .forEach(System.out::println); // Terminal type 2 to use forEach
 
 
         System.out.println("\n----- Sorted + Distinct -----");
