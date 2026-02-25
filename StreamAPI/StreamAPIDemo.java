@@ -1,3 +1,27 @@
+/*
+Stream is a sequence of elements that supports functional-style operations to process data.
+* Stream can be used only once.
+* Stream data store nahi karta.
+* Stream original collection ko modify nahi karta.
+* Stream lazy hota hai (jab tak terminal operation nahi aata, execute nahi hota).
+
+Types of Operations
+--------------------
+1. Intermediate Operations
+   * Return another Stream
+   * Lazy execution
+   * Multiple use ho sakte hain
+
+Examples: filter() , map(), sorted(), distinct(), limit(), skip()
+
+ 2. Terminal Operations
+    * Stream ko close kar dete hain
+    * Final result produce karte hain
+
+Examples: forEach(), collect(), count(), reduce(), anyMatch(), allMatch(), findFirst()
+*/
+
+
 package StreamAPI;
 
 import java.util.*;
@@ -16,23 +40,23 @@ public class StreamAPIDemo {
 
         // Filter numbers greater than 10
         numbers.stream()
-                .filter(n -> n > 10)   // Intermediate
-                .forEach(System.out::println);  // Terminal
+                .filter(n -> n > 10)    // Intermediate operation: filter(Predicate) : filter() uses Predicate functional interface and returns boolean elements that match the condition.
+                .forEach(e -> System.out.println(e); // Terminal operation: forEach. Type 1: Lambda expression.
 
 
         System.out.println("\n----- Map Example -----");
 
         // Multiply each number by 2
         numbers.stream()
-                .map(n -> n * 2)
-                .forEach(System.out::println);
-
+                .map(n -> n * 2) // Intermediate operation: map(Function).
+                                // map() uses Function functional interface and Function takes an input and returns a transformed value.
+                .forEach(System.out::println); // Terminal operation: forEach. Type 2: Method reference.
 
         System.out.println("\n----- Sorted + Distinct -----");
 
         numbers.stream()
                 .distinct()     // Remove duplicates
-                .sorted()       // Sort ascending
+                .sorted()       // sorted() sorts elements either in natural order(ascending) or using Comparator.
                 .forEach(System.out::println);
 
 
@@ -41,7 +65,7 @@ public class StreamAPIDemo {
         List<Integer> result =
                 numbers.stream()
                         .filter(n -> n > 10)
-                        .collect(Collectors.toList());
+                        .collect(Collectors.toList()); //collect() is used to convert stream back into a collection.
 
         System.out.println(result);
 
@@ -61,7 +85,7 @@ public class StreamAPIDemo {
         // Sum of all numbers
         int sum =
                 numbers.stream()
-                        .reduce(0, (a, b) -> a + b);
+                        .reduce(0, (a, b) -> a + b); // reduce() is used to combine elements and produce a single result.
 
         System.out.println("Sum: " + sum);
 
