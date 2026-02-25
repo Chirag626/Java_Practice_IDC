@@ -41,7 +41,7 @@ public class StreamAPIDemo {
         // Filter numbers greater than 10
         numbers.stream()
                 .filter(n -> n > 10)    // Intermediate operation: filter(Predicate) : filter() uses Predicate functional interface and returns boolean elements that match the condition.
-                .forEach(e -> System.out.println(e); // Terminal operation: forEach. Type 1: Lambda expression.
+                .forEach(e -> System.out.println(e)); // Terminal operation: forEach. Type 1: Lambda expression.
 
 
         System.out.println("\n----- Map Example -----");
